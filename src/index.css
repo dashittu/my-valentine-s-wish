@@ -6,72 +6,72 @@
 
 @layer base {
   :root {
-    --background: 350 100% 98%;
-    --foreground: 350 30% 20%;
+    --background: 140 40% 97%;
+    --foreground: 140 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 350 30% 20%;
+    --card-foreground: 140 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 350 30% 20%;
+    --popover-foreground: 140 30% 15%;
 
-    --primary: 350 80% 55%;
+    --primary: 145 60% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 350 30% 92%;
-    --secondary-foreground: 350 30% 25%;
+    --secondary: 140 30% 92%;
+    --secondary-foreground: 140 30% 20%;
 
-    --muted: 350 20% 95%;
-    --muted-foreground: 350 15% 45%;
+    --muted: 140 20% 94%;
+    --muted-foreground: 140 15% 40%;
 
-    --accent: 350 70% 65%;
+    --accent: 145 50% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 350 30% 88%;
-    --input: 350 30% 88%;
-    --ring: 350 80% 55%;
+    --border: 140 30% 88%;
+    --input: 140 30% 88%;
+    --ring: 145 60% 45%;
 
     --radius: 1rem;
 
     /* Custom romantic tokens */
-    --rose-light: 350 100% 95%;
-    --rose-medium: 350 85% 75%;
-    --rose-deep: 350 75% 45%;
+    --sage-light: 140 40% 95%;
+    --sage-medium: 145 45% 70%;
+    --sage-deep: 145 50% 35%;
     --cream: 40 50% 97%;
     --gold: 45 90% 55%;
     
     /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(350 100% 95%) 0%, hsl(350 85% 90%) 50%, hsl(340 70% 85%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(350 80% 55%) 0%, hsl(340 75% 50%) 100%);
-    --gradient-button-hover: linear-gradient(135deg, hsl(350 85% 50%) 0%, hsl(340 80% 45%) 100%);
+    --gradient-romantic: linear-gradient(135deg, hsl(140 50% 96%) 0%, hsl(145 45% 92%) 50%, hsl(150 40% 88%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(145 60% 45%) 0%, hsl(150 55% 40%) 100%);
+    --gradient-button-hover: linear-gradient(135deg, hsl(145 65% 40%) 0%, hsl(150 60% 35%) 100%);
     
     /* Shadows */
-    --shadow-romantic: 0 10px 40px -10px hsl(350 80% 55% / 0.3);
-    --shadow-card: 0 20px 60px -15px hsl(350 50% 50% / 0.2);
-    --shadow-float: 0 25px 80px -20px hsl(350 60% 50% / 0.25);
+    --shadow-romantic: 0 10px 40px -10px hsl(145 60% 45% / 0.3);
+    --shadow-card: 0 20px 60px -15px hsl(145 50% 40% / 0.2);
+    --shadow-float: 0 25px 80px -20px hsl(145 55% 40% / 0.25);
   }
 
   .dark {
-    --background: 350 30% 8%;
-    --foreground: 350 20% 95%;
-    --card: 350 25% 12%;
-    --card-foreground: 350 20% 95%;
-    --popover: 350 25% 12%;
-    --popover-foreground: 350 20% 95%;
-    --primary: 350 80% 60%;
+    --background: 140 30% 8%;
+    --foreground: 140 20% 95%;
+    --card: 140 25% 12%;
+    --card-foreground: 140 20% 95%;
+    --popover: 140 25% 12%;
+    --popover-foreground: 140 20% 95%;
+    --primary: 145 55% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 350 25% 18%;
-    --secondary-foreground: 350 20% 90%;
-    --muted: 350 20% 18%;
-    --muted-foreground: 350 15% 60%;
-    --accent: 350 70% 55%;
+    --secondary: 140 25% 18%;
+    --secondary-foreground: 140 20% 90%;
+    --muted: 140 20% 18%;
+    --muted-foreground: 140 15% 60%;
+    --accent: 145 50% 45%;
     --accent-foreground: 0 0% 100%;
-    --border: 350 25% 20%;
-    --input: 350 25% 20%;
-    --ring: 350 80% 60%;
+    --border: 140 25% 20%;
+    --input: 140 25% 20%;
+    --ring: 145 55% 50%;
   }
 }
 
@@ -127,10 +127,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(350 80% 55% / 0.4);
+    box-shadow: 0 0 20px hsl(145 60% 45% / 0.4);
   }
   50% {
-    box-shadow: 0 0 40px hsl(350 80% 55% / 0.6);
+    box-shadow: 0 0 40px hsl(145 60% 45% / 0.6);
   }
 }
 
@@ -158,9 +158,9 @@
 .animate-shimmer {
   background: linear-gradient(
     90deg,
-    hsl(350 80% 55%) 0%,
-    hsl(350 90% 70%) 50%,
-    hsl(350 80% 55%) 100%
+    hsl(145 60% 45%) 0%,
+    hsl(145 70% 60%) 50%,
+    hsl(145 60% 45%) 100%
   );
   background-size: 200% auto;
   animation: shimmer 3s linear infinite;
