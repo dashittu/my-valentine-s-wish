@@ -36,7 +36,7 @@ const ValentineQuestion = () => {
             Yes! 💕
           </Button>
           
-          <p className="font-serif text-lg sm:text-xl text-muted-foreground italic animate-fade-in opacity-0" style={{ animationDelay: "0.9s" }}>
+          <p className="font-serif text-xl sm:text-2xl md:text-3xl text-muted-foreground italic animate-fade-in opacity-0" style={{ animationDelay: "0.9s" }}>
             No is not an option because we are stuck together forever 💚
           </p>
         </div>
