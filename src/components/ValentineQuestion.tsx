@@ -1,12 +1,40 @@
-import { Heart } from "lucide-react";
+import { useState } from "react";
+import { Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
+interface StarBurst {
+  id: number;
+  angle: number;
+  distance: number;
+  size: number;
+  delay: number;
+}
+
 const ValentineQuestion = () => {
   const navigate = useNavigate();
+  const [stars, setStars] = useState<StarBurst[]>([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleYesClick = () => {
-    navigate("/slideshow");
+    if (isClicked) return;
+    setIsClicked(true);
+    
+    // Create star burst
+    const newStars: StarBurst[] = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      angle: (i * 18) + Math.random() * 10,
+      distance: 80 + Math.random() * 150,
+      size: 16 + Math.random() * 20,
+      delay: Math.random() * 0.15,
+    }));
+    
+    setStars(newStars);
+    
+    // Navigate after animation
+    setTimeout(() => {
+      navigate("/slideshow");
+    }, 1200);
   };
 
   return (
@@ -29,12 +57,31 @@ const ValentineQuestion = () => {
         </h2>
         
         <div className="flex flex-col items-center gap-8">
-          <Button
-            onClick={handleYesClick}
-            className="bg-button-gradient text-primary-foreground font-serif text-xl sm:text-2xl px-8 sm:px-12 py-6 sm:py-8 rounded-full shadow-romantic hover:shadow-float transition-all duration-300 animate-pulse-glow z-10"
-          >
-            Yes! 💕
-          </Button>
+          <div className="relative">
+            <Button
+              onClick={handleYesClick}
+              className={`bg-button-gradient text-primary-foreground font-serif text-xl sm:text-2xl px-8 sm:px-12 py-6 sm:py-8 rounded-full shadow-romantic hover:shadow-float transition-all duration-300 z-10 ${
+                isClicked ? "scale-110" : "animate-pulse-glow"
+              }`}
+            >
+              Yes! 💕
+            </Button>
+            
+            {/* Star burst effect */}
+            {stars.map((star) => (
+              <Star
+                key={star.id}
+                className="absolute left-1/2 top-1/2 text-gold fill-gold star-burst"
+                style={{
+                  width: star.size,
+                  height: star.size,
+                  ["--angle" as string]: `${star.angle}deg`,
+                  ["--distance" as string]: `${star.distance}px`,
+                  animationDelay: `${star.delay}s`,
+                }}
+              />
+            ))}
+          </div>
           
           <p className="font-serif text-xl sm:text-2xl md:text-3xl text-muted-foreground italic animate-fade-in opacity-0" style={{ animationDelay: "0.9s" }}>
             No is not an option because we are stuck together forever 💚

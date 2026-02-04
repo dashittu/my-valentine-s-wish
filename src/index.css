@@ -204,6 +204,32 @@
   animation: shimmer 3s linear infinite;
 }
 
+/* Star burst animation */
+@keyframes star-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2) rotate(30deg);
+  }
+  100% {
+    transform: 
+      translate(
+        calc(-50% + cos(var(--angle)) * var(--distance)), 
+        calc(-50% + sin(var(--angle)) * var(--distance))
+      ) 
+      scale(0) 
+      rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.star-burst {
+  animation: star-burst 1s ease-out forwards;
+}
+
 /* Gradient backgrounds */
 .bg-romantic-gradient {
   background: var(--gradient-romantic);
