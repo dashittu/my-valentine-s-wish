@@ -28,8 +28,8 @@ const photos = [
 
 const Slideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -42,6 +42,36 @@ const Slideshow = () => {
 
     return () => clearInterval(interval);
   }, [isPlaying, currentIndex]);
+
+  useEffect(() => {
+   const audio = audioRef.current;
+   if (!audio) return;
+
+   audio.muted = false;
+   audio.volume = 0.8;
+
+   const tryPlay = async () => {
+     try {
+       await audio.play();
+     } catch {
+       const startOnInteraction = async () => {
+         try {
+           audio.muted = false;
+           await audio.play();
+         } catch {}
+         window.removeEventListener("click", startOnInteraction);
+         window.removeEventListener("touchstart", startOnInteraction);
+         window.removeEventListener("keydown", startOnInteraction);
+       };
+
+       window.addEventListener("click", startOnInteraction, { once: true });
+       window.addEventListener("touchstart", startOnInteraction, { once: true });
+       window.addEventListener("keydown", startOnInteraction, { once: true });
+     }
+   };
+
+   tryPlay();
+ }, []);
 
   const goToNext = () => {
     setIsTransitioning(true);
@@ -63,15 +93,18 @@ const Slideshow = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      if (isMuted) {
-        audioRef.current.play().catch(() => {});
-      }
-    }
-    setIsMuted(!isMuted);
-  };
+const toggleMute = async () => {
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  const nextMuted = !isMuted;
+  audio.muted = nextMuted;
+  setIsMuted(nextMuted);
+
+  if (!nextMuted && audio.paused) {
+    try { await audio.play(); } catch {}
+  }
+};
 
   return (
     <div className="min-h-screen bg-romantic-gradient flex flex-col items-center justify-center px-4 relative overflow-hidden">
