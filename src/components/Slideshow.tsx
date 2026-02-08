@@ -43,6 +43,66 @@ const photos = [
     url: `${import.meta.env.BASE_URL}photos/One_of_few_exercises.jpeg`,
     caption: "One of our home exeercises. I won't mind us doing this more often.",
   },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Tennesse.jpeg`,
+    caption: "The most beautiful smile in the entire world. I'm happy I get to call you my wife. I pray Allah gives me the fortitude to put more of this smile on your face ",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Tennesse_car.jpeg`,
+    caption: "We need to take more car pictures like this",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Official_gf.jpeg`,
+    caption: "The day we officially started our journey on becoming one. I was shy but I bagged the real one ",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Proposal.jpeg`,
+    caption: "One of my happiest day. I'm glad I get to do life with you",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Prettiest_fingers.jpeg`,
+    caption: "The prettiest fingers.",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Nikkah.jpeg`,
+    caption: "The happiest day of my life. I pray we do 100 more years together in good health and loads of wealth",
+  },
+ 
+  {
+    url: `${import.meta.env.BASE_URL}photos/Six_flags.jpeg`,
+    caption: "We still need to do this again.",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Chicago.jpeg`,
+    caption: "Looking forward to more memories.",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/One_of_my_favorite_call.jpeg`,
+    caption: "The Queen in her natural state.",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Photoshoot.jpeg`,
+    caption: "Happy Valentine to the love of my life.",
+  },
+
+
+
+
+
+
+
+
+
+
 ];
 
 const Slideshow = () => {
