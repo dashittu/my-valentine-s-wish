@@ -5,24 +5,43 @@ import { Button } from "@/components/ui/button";
 // Placeholder images - replace these with your actual photos
 const photos = [
   {
-    url: "/placeholder.svg",
-    caption: "Our first adventure together ❤️",
+    url: `${import.meta.env.BASE_URL}photos/early-days.jpeg`,
+    caption: "Our first picture togehter ❤️. Even before I asked you to be my girlfriend, my heart already knew where it belonged",
   },
+
   {
-    url: "/placeholder.svg",
-    caption: "That magical sunset we shared 🌅",
+    url: `${import.meta.env.BASE_URL}photos/First_painting.jpeg`,
+    caption: "Our first painting together in Nashville, after Valentine’s, March 2024. It was messy, it was fun, and it became a memory I’ll always cherish.",
   },
+
   {
-    url: "/placeholder.svg",
-    caption: "Making memories every day 💕",
+    url: `${import.meta.env.BASE_URL}photos/Out_of_state_hike.jpeg`,
+    caption: "Our first out of state hiking in Nashville.",
   },
+
   {
-    url: "/placeholder.svg",
-    caption: "My favorite smile in the world 😊",
+    url: `${import.meta.env.BASE_URL}photos/First_tennis.jpeg`,
+    caption: "Also one of our first. Our first tennis together.",
   },
+
   {
-    url: "/placeholder.svg",
-    caption: "Forever grateful for you 💝",
+    url: `${import.meta.env.BASE_URL}photos/First_concert.jpeg`,
+    caption: "Our first concert together.Thought I had fun, come to find out Beyonce would be way much fun. Haha",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/First_hike.jpeg`,
+    caption: "Our first hiking in Maryland. Was really cold this day but I was cold in love",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/Houston.jpeg`,
+    caption: "It was nice having to hang out with your family where you grew up. I'm glad to be part of the family",
+  },
+
+  {
+    url: `${import.meta.env.BASE_URL}photos/One_of_few_exercises.jpeg`,
+    caption: "One of our home exeercises. I won't mind us doing this more often.",
   },
 ];
 
